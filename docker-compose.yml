@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  # Local Ethereum node + the Voting contract, deployed deterministically.
+  blockchain:
+    build: ./blockchain
+    ports:
+      - "8545:8545"
+
+  # SSI issuer: signs eligibility credentials only. Never touches the chain,
+  # never relays a transaction, never sees a vote or the results.
+  issuer:
+    build: ./issuer
+    ports:
+      - "4000:4000"
+
+  # Static frontend. Talks to the chain and the issuer directly from the browser.
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"

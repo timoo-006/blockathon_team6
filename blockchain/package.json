@@ -1,0 +1,12 @@
+{
+  "name": "voting-blockchain",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "bash scripts/start.sh"
+  },
+  "devDependencies": {
+    "hardhat": "^2.22.0",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0"
+  }
+}
