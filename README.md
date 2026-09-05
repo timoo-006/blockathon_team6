@@ -131,6 +131,14 @@ The issuer here is intentionally the smallest possible trust anchor: it holds
 a list of registration requests and signs one message per approved voter. The
 judgement of *who* is eligible is a human one, made in the Admin view.
 
+## 🛠 Troubleshooting & Local Tips
+
+* **MetaMask Nonce Conflicts on Restart:**  
+  If you restart the Docker containers, the local Hardhat chain resets its state to block `#0`. MetaMask might reject transactions or fail to sign due to cached nonces.  
+  * **Fix:** In MetaMask, go to **Settings** → **Advanced** → **Clear activity tab data** (or **Reset Account**).
+* **Port Availability:**  
+  Ensure ports `8080` (Frontend), `4000` (Issuer API), and `8545` (Hardhat Node) are not occupied by other applications before running `docker compose up`.
+
 ## Limits of this demo
 
 - Registration requests live in the issuer's memory and reset on container
